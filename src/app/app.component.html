@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="header text-center mt-5">
+    <h1 class="display-4">ToDo App</h1>
+    <p class="lead">Advance Version With Filter</p>
+  </div>
+
+  <div class="task-input mt-5">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Task Name"
+        [(ngModel)]="taskObj.title"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <textarea
+        class="form-control"
+        [(ngModel)]="taskObj.taskDescription"
+      ></textarea>
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="date"
+        id="textData"
+        class="form-control"
+        placeholder="Due Date"
+        [(ngModel)]="taskObj.dueDate"
+      />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Comma Separated tags"
+        [(ngModel)]="taskObj.tags"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" (click)="addTask()">
+          Add Task
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="filters mt-3">
+    <button class="btn btn-primary">Filter By Tags</button>
+    <button class="btn btn-secondary">Show All</button>
+    <button class="btn btn-secondary">Show Completed</button>
+  </div>
+
+    <div *ngFor="let b of buttonArray; let i = index" (click)="onClickButton(i)" class="btn btn-outline-secondary " style="margin-right:10px !important">{{b}}</div>
+
+  <table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Task Name</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tasklist; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <input type="checkbox" />
+          {{ item.taskName }}
+        </td>
+        <td>{{ item.dueDate | date : "yy-MM-dd" }}</td>
+        <td>
+          <button
+            class="btn btn-warning btn-sm rounded-btn"
+            (click)="onEdit(item)"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger btn-sm rounded-btn"
+            (click)="onDelete(item.itemId)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

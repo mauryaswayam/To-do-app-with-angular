@@ -1,0 +1,57 @@
+/* Add 3D effect to the container */
+.container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Add 3D effect to the header */
+.header {
+  transform: translateZ(50px);
+  box-shadow: 0 0 10px rgba(11, 159, 213, 0.5);
+}
+
+/* Add 3D effect to the task input */
+.task-input {
+  transform: translateZ(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add 3D effect to the filters */
+.filters {
+  transform: translateZ(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add 3D effect to the tags */
+.tags {
+  transform: translateZ(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add 3D effect to the table */
+.table {
+  transform: translateZ(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add 3D effect to the table rows */
+.table tr {
+  transform: translateZ(5px);
+  transition: transform 0.3s;
+}
+
+.table tr:hover {
+  transform: translateZ(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add 3D effect to the buttons */
+.btn {
+  transform: translateZ(5px);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: translateZ(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
